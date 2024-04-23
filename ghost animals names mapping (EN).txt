@@ -1,0 +1,16 @@
+label name
+frog Frog
+turtle Turtle
+snake Snake
+crane Crane
+monkey Monkey
+ox Ox
+rat Rat
+dog Dog
+dragon Dragon
+rooster Rooster
+sheep Sheep
+boar Boar
+tiger Tiger
+horse Horse
+rabbit Rabbit
