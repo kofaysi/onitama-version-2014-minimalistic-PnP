@@ -9,8 +9,8 @@ The SVG files targeted by this script are created with Inkscape, with save attri
 The project includes the following files:
 
 - `replace_animals.sh`: Bash script to perform text replacement in SVG files.
-- `ghost animals names mapping (EN).txt`: Mapping file for English animal names.
-- `ghost animals names mapping (HU).txt`: Mapping file for Hungarian animal names.
+- `ghost animals names mapping (EN).csv`: Mapping file for English animal names.
+- `ghost animals names mapping (HU).csv`: Mapping file for Hungarian animal names.
 
 ## Prerequisites
 
@@ -34,10 +34,10 @@ To use the script, you need to specify the path to an SVG file and a mapping fil
 ### Example Command
 
 ```bash
-./replace_animals.sh -m ghost\ animals\ names\ mapping\ \(EN\).txt example.svg
+./replace_animals.sh -m ghost\ animals\ names\ mapping\ \(EN\).csv Onitama\ japanese\ PnP\ version.svg
 ```
 
-This command will replace names in example.svg using the mappings specified in ghost animals names mapping (EN).txt.
+This command will replace names in `Onitama japanese PnP version.svg` using the mappings specified in `ghost animals names mapping (EN).csv`.
 Mapping File Format
 
 The mapping files should contain one mapping per line, formatted as follows:
@@ -45,8 +45,7 @@ The mapping files should contain one mapping per line, formatted as follows:
 ```css
 [old_name] [new_name]
 ```
-
-The first line of each mapping file is ignored as it is considered a header.
+The separator can be comman, space or tab (mixed usage is allowed). The first line of each mapping file is ignored as it is considered a header.
 
 ### Contributing
 

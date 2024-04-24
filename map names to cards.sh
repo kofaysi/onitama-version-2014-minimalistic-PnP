@@ -24,25 +24,31 @@ done
 # Shift away processed options
 shift $((OPTIND-1))
 
+# Set variables for files
+file_to_modify="$1"
+
 # Check the correct number of positional arguments
 if [ "$#" -ne 1 ] || [ -z "$mapping_file" ]; then
   usage
 fi
 
-# Check existence of the SVG file and mappings file
-if [ ! -f "$1" ] || [ ! -f "$mapping_file" ]; then
-  echo "Error: One or both specified files do not exist."
+# Check existence of the mappings file
+if [ ! -f "$mapping_file" ]; then
+  echo "Error: The mappings file '$mapping_file' does not exist."
   exit 1
 fi
 
-# Set variables for files
-file_to_modify="$1"
+# Check existence of the SVG file
+if [ ! -f "$file_to_modify" ]; then
+  echo "Error: The SVG file '$file_to_modify' does not exist."
+  exit 1
+fi
 
 # Process each line from the mappings file and perform replacements
 {
   # Skip the first line (header) and read the rest
   read  # This reads the first line from the input and does nothing with it
-  while IFS=' ' read -r column1 column2; do
+  while IFS=$', \t' read -r column1 column2; do
     # Skip empty lines and comments
     [[ "$column1" =~ ^#.*$ || -z "$column1" ]] && continue
 
