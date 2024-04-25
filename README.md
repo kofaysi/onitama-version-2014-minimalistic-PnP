@@ -47,6 +47,8 @@ The mapping files should contain one mapping per line, formatted as follows:
 ```
 The separator can be comman, space or tab (mixed usage is allowed). The first line of each mapping file is ignored as it is considered a header.
 
+The translations herewithin follow the translation of the Japanese zodiac signs istead of literal translation of the animal kind.
+
 ### Contributing
 
 Contributions to this project are welcome. Please ensure any contributions follow the existing coding style and file structure.
